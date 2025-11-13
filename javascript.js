@@ -10,7 +10,7 @@ style.sheet.insertRule(`
 .gridItem {
     width: calc(100% / ${elementsPerRow});
     aspect-ratio: 1 / 1;
-    border: 2px solid blue;
+    border: 1px solid black;
 }`);
 
 for (let i = 0; i < elementsPerRow*elementsPerRow; i++) {
