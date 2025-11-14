@@ -22,7 +22,6 @@
 .gridItem {
     width: calc(100% / var(--gridSize));
     aspect-ratio: 1 / 1;
-
     border: 1px solid black;
 }
 

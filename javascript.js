@@ -11,11 +11,12 @@ function drawGrid(elementsPerRow) {
         gridElement.classList.add('gridItem');
         gridContainer.appendChild(gridElement);
     }
-} 
+}
 
 drawGrid(elementsPerRow);
 
 let drawing = false
+let randomColor = false;
 document.addEventListener('mousedown', () => drawing = true);
 document.addEventListener('mouseup', () => drawing = false);
 
@@ -24,13 +25,27 @@ document.addEventListener('selectstart', e => e.preventDefault());
 
 gridContainer.addEventListener('mousedown', e => {
     if (e.target.classList.contains('gridItem')) {
-        e.preventDefault(); 
-        e.target.style.backgroundColor = 'blue';   // paint first tile
+        e.preventDefault();
+        if (randomColor) {
+            const red = Math.floor(Math.random() * 255) + 1;
+            const green = Math.floor(Math.random() * 255) + 1;
+            const blue = Math.floor(Math.random() * 255) + 1;
+            e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
+        } else {
+            e.target.style.backgroundColor = 'blue';   // paint first tile
+        }
     }
 });
 gridContainer.addEventListener('mouseover', e => {
     if (drawing && e.target.classList.contains('gridItem')) {
-        e.target.style.backgroundColor = 'blue';
+        if (randomColor) {
+            const red = Math.floor(Math.random() * 255) + 1;
+            const green = Math.floor(Math.random() * 255) + 1;
+            const blue = Math.floor(Math.random() * 255) + 1;
+            e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
+        } else {
+            e.target.style.backgroundColor = 'blue';
+        }
     }
 })
 
@@ -59,6 +74,10 @@ gridSize64x64.addEventListener('click', () => {
     document.documentElement.style.setProperty('--gridSize', 64);
     drawGrid(64);
 })
+
+
+const buttonRandomCol = document.querySelector('.buttonRND');
+buttonRandomCol.addEventListener('click', () => randomColor = true);
 
 
 
