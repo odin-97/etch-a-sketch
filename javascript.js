@@ -23,6 +23,8 @@ document.addEventListener('mouseup', () => drawing = false);
 const gridElementsAll = document.querySelectorAll('.gridItem');
 gridElementsAll.forEach(item => {
     // item.style.backgroundColor = 'green';
+    item.addEventListener('mousedown', e => e.preventDefault());
+
     item.addEventListener('mouseenter', () => {
         if (drawing) item.style.backgroundColor = 'blue';
     })

@@ -11,4 +11,53 @@
     background-color: white;
     width: 45%;
     height: auto;
+    margin-bottom: 40px;
+    align-self: center;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: brown;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    margin:  5px 0px;
+}
+
+.settings {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 0 5px;
+}
+
+.buttonContainer {
+    align-self: center;
+}
+
+.buttonContainer p {
+    font-weight: bold;
+    text-align: center;
+}
+
+.buttonContainer button {
+    width: 50px;
+    height: 20px;
+    background-color: blue;
+    color: white;
+    border-radius: 7px;
+}
+
+.randomColor {
+    align-self: center;
+}
+
+.randomColor button {
+    background-color: red;
 }
