@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+:root {
+    --gridSize: 16;
+}
+
 .gridContainer {
     display: flex;
     margin: auto;
@@ -13,6 +17,13 @@
     height: auto;
     margin-bottom: 40px;
     align-self: center;
+}
+
+.gridItem {
+    width: calc(100% / var(--gridSize));
+    aspect-ratio: 1 / 1;
+
+    border: 1px solid black;
 }
 
 .header {
